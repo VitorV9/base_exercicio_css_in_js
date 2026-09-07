@@ -7,7 +7,7 @@ type Props = {
   modalidade: string
   salarioMin: number
   salarioMax: number
-  link: string
+  requisitos: string[]
 }
 
 const Vaga = (props: Props) => (
@@ -20,8 +20,9 @@ const Vaga = (props: Props) => (
       <li>
         Salário: {props.salarioMin} - {props.salarioMax}
       </li>
+      <li>Requisitos: {props.requisitos.join(', ')}</li>
     </ul>
-    <VagaLink href="{props.link}">Ver detalhes e candidatar-se</VagaLink>
+    <VagaLink href="#">Ver detalhes e candidatar-se</VagaLink>
   </VagaCard>
 )
 
