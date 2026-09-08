@@ -1,24 +1,5 @@
 import styled from 'styled-components'
 
-export const VagaCard: any = styled.li`
-  border: 1px solid var(--cor-principal, #a7727d);
-  background-color: var(--cor-secundaria, #f9f5e7);
-  color: var(--cor-principal, #a7727d);
-  padding: 16px;
-  transition: all ease 0.3s;
-  border-radius: 8px;
-
-  &:hover {
-    background-color: var(--cor-principal, #a7727d);
-    color: var(--cor-secundaria, #f9f5e7);
-  }
-`
-
-export const VagaTitulo: any = styled.h3`
-  font-weight: bold;
-  margin-bottom: 16px;
-`
-
 export const VagaLink: any = styled.a`
   border-color: var(--cor-secundaria, #f9f5e7);
   background-color: var(--cor-principal, #a7727d);
@@ -35,10 +16,30 @@ export const VagaLink: any = styled.a`
   @media (max-width: 768px) {
     display: block;
   }
+`
 
-  /* Usando uma classe global provisória para o hover do link não quebrar no TS */
+export const VagaTitulo: any = styled.h3`
+  font-weight: bold;
+  margin-bottom: 16px;
+`
+
+export const VagaCard: any = styled.li`
+  border: 1px solid var(--cor-principal, #a7727d);
+  background-color: var(--cor-secundaria, #f9f5e7);
+  color: var(--cor-principal, #a7727d);
+  padding: 16px;
+  transition: all ease 0.3s;
+  border-radius: 8px;
+
   &:hover {
-    background-color: var(--cor-secundaria, #f9f5e7);
-    color: var(--cor-principal, #a7727d);
+    background-color: var(--cor-principal, #a7727d);
+    color: var(--cor-secundaria, #f9f5e7);
+
+    /* Quando o Card sofrer hover, mudamos o VagaLink diretamente! */
+    ${VagaLink} {
+      border-color: var(--cor-principal, #a7727d);
+      background-color: var(--cor-secundaria, #f9f5e7);
+      color: var(--cor-principal, #a7727d);
+    }
   }
 `
